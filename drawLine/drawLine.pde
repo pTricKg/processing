@@ -7,7 +7,7 @@ void setup() {
 //  size(820, 640);
 //  background(255);
   maxim = new Maxim(this);
-  player = maxim.loadFile("thunder");
+  player = maxim.loadFile("thunder.mp3");
 }
 
 void draw() {
@@ -18,7 +18,7 @@ void draw() {
 //  line(pmouseX, pmouseY, mouseX, mouseY);
 //}
 
-void mousePressed() {
+void mouseReleased() {
   //player.cue(0);
   player.play();
 }
