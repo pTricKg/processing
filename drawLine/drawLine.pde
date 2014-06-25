@@ -1,13 +1,25 @@
-void setup() {
+//Audio variables
+Maxim maxim;
+AudioPlayer player;
 
-  size(820, 640);
-  background(255);
+void setup() {
+//
+//  size(820, 640);
+//  background(255);
+  maxim = new Maxim(this);
+  player = maxim.loadFile("thunder");
 }
 
-void draw() { }  // mouseDragged doesn't work without this
+void draw() {
+}  // mouseDragged doesn't work without this
 
-void mouseDragged() {
+//void mouseDragged() {
+//
+//  line(pmouseX, pmouseY, mouseX, mouseY);
+//}
 
- line(pmouseX, pmouseY, mouseX, mouseY);
+void mousePressed() {
+  //player.cue(0);
+  player.play();
 }
 
