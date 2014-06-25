@@ -3,23 +3,24 @@ Maxim maxim;
 AudioPlayer player;
 
 void setup() {
-//
-//  size(820, 640);
-//  background(255);
+
+  size(820, 640);
+  background(255);
   maxim = new Maxim(this);
-  player = maxim.loadFile("thunder.mp3");
+  player = maxim.loadFile("thunder.wav");
+  
 }
 
 void draw() {
 }  // mouseDragged doesn't work without this
 
-//void mouseDragged() {
-//
-//  line(pmouseX, pmouseY, mouseX, mouseY);
-//}
+void mouseDragged() {
 
-void mouseReleased() {
-  //player.cue(0);
+  line(pmouseX, pmouseY, mouseX, mouseY);
+}
+
+void mousePressed() {
+  player.cue(0);
   player.play();
 }
 
