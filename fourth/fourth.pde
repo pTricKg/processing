@@ -9,3 +9,6 @@ float green = dist(mouseX, mouseY, width/2, height/2);
 lineWidth = constrain(lineWidth, 0, 10);
 // line width between 0 and 10
 
+
+frameRate(1); // set frame rate
+
