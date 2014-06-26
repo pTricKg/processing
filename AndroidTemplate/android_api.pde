@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.io.BufferedInputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-//import android.content.res.Resources;
+import android.content.res.Resources;
 import android.app.Activity; 
 import android.os.Bundle; 
 import android.media.*;
