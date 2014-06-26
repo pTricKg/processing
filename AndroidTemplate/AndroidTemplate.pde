@@ -9,8 +9,7 @@ boolean playit;
 int elements = 20;// This is the number of points and lines we will calculate at once. 1000 is alot actually. 
 
 void setup() {
-  //The size is iPad Portrait.
-  //If you want landscape, you should swap the values.
+  
   size(768, 1024); 
 
   frameRate(25); // this is the framerate. Tweak for performance
