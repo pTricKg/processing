@@ -17,6 +17,7 @@ void draw() {
 void mouseDragged() {
 
   line(pmouseX, pmouseY, mouseX, mouseY);
+  box(40,20,50);
 }
 
 void mousePressed() {
