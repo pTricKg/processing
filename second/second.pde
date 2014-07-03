@@ -11,3 +11,12 @@ point(100, 100); //Draw pixel
 line(200, 200, 300, 800);  // Draw line: x,y, start and x,y end
 
 rect(400, 400, 100, 100); 
+
+// set-up for animating
+PImage [] anim = new PIimage[4]; // array example
+
+int currentImage = 0;
+
+image(anim[currentImage]; // going through array with image
+
+currentImage += 1 // increment image for anim
