@@ -1,8 +1,10 @@
 PImage img;
+PImage img1;
 
 void setup() {
 
   img = loadImage("face.jpg");
+  img1 = loadImage("face.jpg");
   size(820,640);
   //size(img.width, img.height);
   imageMode(CENTER); // position img
@@ -17,8 +19,8 @@ void draw() {
 void mouseDragged() {
   strokeWeight(25);
   line(pmouseX, pmouseY, pmouseX, pmouseY);
-  imageMode(CENTER); // position img
-  image(img, pmouseX,pmouseY); // present image
+//  imageMode(CENTER); // position img
+  image(img1, pmouseX,pmouseY); // present image
   
 }
 
