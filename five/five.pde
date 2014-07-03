@@ -16,8 +16,9 @@ void draw() {
 
 void mouseDragged() {
   strokeWeight(25);
-  line(img.width, img.height, pmouseY, pmouseX);
+  line(pmouseX, pmouseY, pmouseX, pmouseY);
   image(img, pmouseX,pmouseY); // present image
+  
 }
 
 //void mouseClicked() {
