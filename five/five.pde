@@ -4,8 +4,7 @@ PImage img1;
 void setup() {
 
   img = loadImage("face.jpg");
-  img1 = loadImage("face.jpg");
-  size(820,640);
+  size(820, 640);
   //size(img.width, img.height);
   imageMode(CENTER); // position img
   //int imgheight = 100*img.height/img.width; // preserves aspect ration
@@ -13,15 +12,14 @@ void setup() {
 }
 
 void draw() {
-  
 }  // mouseDragged doesn't work without this
 
 void mouseDragged() {
   strokeWeight(25);
   line(pmouseX, pmouseY, pmouseX, pmouseY);
-//  imageMode(CENTER); // position img
-  image(img1, pmouseX,pmouseY); // present image
-  
+  //  imageMode(CENTER); // position img
+  img1 = loadImage("face1.jpg");
+  image(img1, pmouseX, pmouseY); // present image
 }
 
 //void mouseClicked() {
