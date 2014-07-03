@@ -4,14 +4,14 @@ void setup() {
 
   img = loadImage("face.jpg");
   size(820,640);
+  
+}
+
+void draw() {
   //size(img.width, img.height);
   //imageMode(CENTER); // position img
   //int imgheight = 100*img.height/img.width; // preserves aspect ration
   image(img, width/2, 0); // present image
-}
-
-void draw() {
-  
 }  // mouseDragged doesn't work without this
 
 void mouseDragged() {
