@@ -15,8 +15,8 @@ void draw() {
 }  // mouseDragged doesn't work without this
 
 void mouseDragged() {
-  strokeWeight(10);
-  line(pmouseX, pmouseY, mouseX, mouseY);
+  strokeWeight(25);
+  line(img.width, img.height, pmouseY, pmouseX);
   image(img, pmouseX,pmouseY); // present image
 }
 
