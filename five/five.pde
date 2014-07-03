@@ -3,11 +3,11 @@ PImage img;
 void setup() {
 
   img = loadImage("face.jpg");
-  size(640,820);
+  size(820,640);
   //size(img.width, img.height);
   //imageMode(CENTER); // position img
   //int imgheight = 100*img.height/img.width; // preserves aspect ration
-  image(img, 0, 0); // present image
+  image(img, width/2, 0); // present image
 }
 
 void draw() {
