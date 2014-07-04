@@ -20,7 +20,7 @@ void draw() {
 //  image(anim[curImage]);
 //  curImage += 1;
   if(ply) {
-    image(anim[curPos], 0, 0);
+    image(anim[curPos], 0, 0, 300, 500);
     curPos += 1;
     if (curPos >= anim.length) {
       curPos = 0;
