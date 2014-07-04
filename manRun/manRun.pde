@@ -1,5 +1,5 @@
 PImage [] anim;
-boolean playing = false;
+boolean ply = false;
 int curPos = 0;
 
 /* Running Man Animation */
@@ -19,13 +19,17 @@ void setup() {
 void draw() {
 //  image(anim[curImage]);
 //  curImage += 1;
-
-  image(anim[curPos], 0, 0);
-  
-  curPos += 1;
-  if (curPos >= anim.length) {
-    curPos = 0;
+  if(ply) {
+    image(anim[curPos], 0, 0);
+    curPos += 1;
+    if (curPos >= anim.length) {
+      curPos = 0;
+    }
   }
+
+  
+  
+  
 }  // mouseDragged doesn't work without this
 
 void mouseDragged() {
@@ -34,5 +38,6 @@ void mouseDragged() {
 
 void mouseClicked() {
   curPos = 0;
+  ply = !ply;
 }
 
