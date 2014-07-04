@@ -7,7 +7,7 @@ void setup() {
   //setup animation
   //anim = new PImage[14];
   anim = loadImages("data/anim/", ".jpg", 14);
-  size(anim[0].width, anim[0].height);
+  //size(anim[0].width, anim[0].height);
   int curImage = 0;
   
   
