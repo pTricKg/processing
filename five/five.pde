@@ -16,6 +16,7 @@ void setup() {
 }
 
 void draw() {
+  img = loadImage("face.jpg");
 }  // mouseDragged doesn't work without this
 
 void mouseDragged() {
@@ -25,9 +26,10 @@ void mouseDragged() {
 }
 
 void mouseClicked() {
-  img = loadImage("face.jpg");
+  
   background(0, 0, 0);
-  imageMode(CENTER);git 
+  imageMode(CENTER);
+  img = loadImage("face.jpg");
   //  size(40, 40, P3D);
   //  translate(58, 48, 0); 
   //  rotateY(0.5);
