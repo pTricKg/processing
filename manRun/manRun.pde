@@ -5,13 +5,13 @@ int curPos = 0;
 /* Running Man Animation */
 void setup() {
   //setup animation
-  //anim = new PImage[14];
   anim = loadImages("data/anim/", ".jpg", 14);
+  //imageMode(CENTER);
   //size(anim[0].width, anim[0].height);
   int curImage = 0;
   
   
-  size(820, 640);
+  size(300, 500);
   background(0, 0, 0);
   
 }
