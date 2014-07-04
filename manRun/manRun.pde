@@ -8,7 +8,7 @@ AudioPlayer player;
 /* Running Man Animation */
 void setup() {
   //setup animation
-  anim = loadImages("data/anim/", ".jpg", 14);
+  anim = loadImages("data/anim/", ".jpg", 28);
   //imageMode(CENTER);
   //size(anim[0].width, anim[0].height);
   int curImage = 0;
