@@ -2,6 +2,9 @@ PImage [] anim;
 boolean ply = false;
 int curPos = 0;
 
+Maxim maxim;
+AudioPlayer player;
+
 /* Running Man Animation */
 void setup() {
   //setup animation
@@ -10,9 +13,15 @@ void setup() {
   //size(anim[0].width, anim[0].height);
   int curImage = 0;
   
-  
+  // set up window
   size(300, 500);
   background(0, 0, 0);
+  
+  // set up sound
+  maxim = new Maxim(this);
+  player = maxim.loadFile("mybeat.wav");
+  player.setLooping(true);
+  player.play();
   
 }
 
@@ -27,13 +36,16 @@ void draw() {
     }
   }
 
-  
+  float ratio = (float) mouseX / (float) width;
+  ratio *= 2;
+  player.speed(ratio);
   
   
 }  // mouseDragged doesn't work without this
 
 void mouseDragged() {
-  
+  player.cue(0);
+  player.play();
 }
 
 void mouseClicked() {
