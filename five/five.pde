@@ -1,5 +1,9 @@
 PImage img;
 
+/* not quite sure
+  what is happening here
+  but more work to come*/
+
 void setup() {
 
   img = loadImage("face.jpg");
