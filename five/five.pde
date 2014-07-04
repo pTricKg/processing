@@ -17,14 +17,13 @@ void draw() {
 void mouseDragged() {
   strokeWeight(25);
   line(pmouseX, pmouseY, pmouseX, pmouseY);
-  //  imageMode(CENTER); // position img
   image(img, pmouseX, pmouseY); // present image
 }
 
 void mouseClicked() {
   img = loadImage("face.jpg");
   background(0, 0, 0);
-  imageMode(CENTER);
+  imageMode(CENTER);git 
   //  size(40, 40, P3D);
   //  translate(58, 48, 0); 
   //  rotateY(0.5);
