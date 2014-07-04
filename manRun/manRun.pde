@@ -1,12 +1,13 @@
 PImage [] anim;
+boolean playing = false;
+int curPos = 0;
 
-/* not quite sure
-  what is happening here
-  but more work to come*/
-
+/* Running Man Animation */
 void setup() {
   //setup animation
-  anim = new PImage[14];
+  //anim = new PImage[14];
+  anim = loadImages("data/anim/", ".jpg", 14);
+  size(anim[0].width, anim[0].height);
   int curImage = 0;
   
   
@@ -16,8 +17,15 @@ void setup() {
 }
 
 void draw() {
-  image(anim[curImage]);
-  curImage += 1;
+//  image(anim[curImage]);
+//  curImage += 1;
+
+  image(anim[curPos], 0, 0);
+  
+  curPos += 1;
+  if (curPos >= anim.length) {
+    curPos = 0;
+  }
 }  // mouseDragged doesn't work without this
 
 void mouseDragged() {
@@ -25,6 +33,6 @@ void mouseDragged() {
 }
 
 void mouseClicked() {
-  curImage = 0;
+  curPos = 0;
 }
 
