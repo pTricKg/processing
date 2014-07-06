@@ -4,16 +4,13 @@ int curPos = 0;
 
 Maxim maxim;
 AudioPlayer player;
-//int curImage = 0;
 
 /* Running Man Animation */
+
 void setup() {
   //setup animation
   anim = loadImages("anim/anim", ".jpg", 28);
-  //imageMode(CENTER);
-  //size(anim[0].width, anim[0].height);
-
-
+  
   // set up window
   //size(width, height);
   background(0, 0, 0);
@@ -25,7 +22,7 @@ void setup() {
   player.play();
 }
 
-void draw() {
+void draw() { // mouseDragged doesn't work without this
   //  image(anim[curImage]);
   //  curImage += 1;
   //float imageWidth = (height*anim[curPos].width)/anim[curPos].height;
@@ -41,7 +38,7 @@ void draw() {
   float ratio = (float) mouseX / (float) width;
   ratio *= 2;
   player.speed(ratio);
-}  // mouseDragged doesn't work without this
+}  
 
 void mouseDragged() {
 //  player.cue(0);
@@ -54,8 +51,6 @@ void mouseDragged() {
 
 void mouseClicked() {
   curPos = 0;
-//  ply = !ply;
-  //image(anim[curPos]);
-  //curPos += 1;
-}
+  ply = !ply;
+ }
 
