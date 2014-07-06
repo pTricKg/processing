@@ -12,7 +12,7 @@ void setup() {
   //setup animation
   ply = true;
   anim = loadImages("anim/anim", ".jpg", 28);
-  
+
   // set up window
   //size(width, height);
   background(0, 0, 0);
@@ -34,19 +34,19 @@ void draw() { // mouseDragged doesn't work without this
     curPos += 1;
     if (curPos >= anim.length) {
       curPos = 0;
-      
     }
   }
   float ratio = 0;
-  
+
   if (button) {
     fill(255, 0, 0);
-  }else{
+  }
+  else {
     fill(0, 255, 0);
   }
   rect(0 + width/2, 0, width/2, height/8);
-  
-  if (mouseY > height/2) {
+
+  if (mouseY < height/8) {
     ratio = (float) mouseX / (float) width;
     ratio *= 2;
     player.speed(ratio);
@@ -56,25 +56,30 @@ void draw() { // mouseDragged doesn't work without this
 }  
 
 void mouseDragged() {
-//  player.cue(0);
-//  player.play();
+  //  player.cue(0);
+  //  player.play();
 
   curPos = (int)map(mouseX, 0, width, 0, anim.length-1);
 
   curPos = constrain(curPos, 0, anim.length-1);
 }
-void mouseClicked() {
-  curPos = 0;
-  ply = !ply;
- }
+//void mouseClicked() {
+//  curPos = 0;
+//  ply = !ply;
+//}
 void mousePressed() {
   if (mouseY < height/8) {
     button = !button;
     if (button) {
       player.play();
-    }else {
+    }
+    else {
       player.stop();
     }
-   }
- }
+  }
+  if (mouseY > height/2) {
+    curPos = 0;
+    ply = !ply;
+  }
+}
 
