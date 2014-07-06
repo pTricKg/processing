@@ -31,9 +31,10 @@ void draw() {
   //float imageWidth = (height*anim[curPos].width)/anim[curPos].height;
   if (ply) {
     image(anim[curPos], 0, 0, width, height);
-    //curPos += 1;
+    
     if (curPos >= anim.length) {
-      curPos = 0;
+      //curPos = 0;
+      curPos += 1;
     }
   }
 
@@ -53,6 +54,8 @@ void mouseDragged() {
 
 void mouseClicked() {
   curPos = 0;
-  ply = !ply;
+//  ply = !ply;
+  //image(anim[curPos]);
+  //curPos += 1;
 }
 
