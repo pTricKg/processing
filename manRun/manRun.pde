@@ -1,5 +1,6 @@
 PImage [] anim;
-boolean ply = true;
+boolean ply;
+boolean button;
 int curPos = 0;
 
 Maxim maxim;
@@ -9,6 +10,7 @@ AudioPlayer player;
 
 void setup() {
   //setup animation
+  ply = true;
   anim = loadImages("anim/anim", ".jpg", 28);
   
   // set up window
@@ -16,6 +18,7 @@ void setup() {
   background(0, 0, 0);
 
   // set up sound
+  button = false;
   maxim = new Maxim(this);
   player = maxim.loadFile("mybeat.wav");
   player.setLooping(true);
@@ -35,6 +38,14 @@ void draw() { // mouseDragged doesn't work without this
     }
   }
   float ratio = 0;
+  
+  if (button) {
+    fill(255, 0, 0);
+  }else{
+    fill(0, 255, 0);
+  }
+  rect(width/4, height/10, width/4, height/10);
+  
   if (mouseY > height/2) {
     ratio = (float) mouseX / (float) width;
     ratio *= 2;
@@ -53,8 +64,16 @@ void mouseDragged() {
   curPos = constrain(curPos, 0, anim.length-1);
 }
 
-void mouseClicked() {
+void mousePressed() {
   curPos = 0;
   ply = !ply;
+  if (mouseY < height/2) {
+    button = !button;
+    if (button) {
+      player.play();
+    }else {
+      player.stop();
+    }
+   }
  }
 
