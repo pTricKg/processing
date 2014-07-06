@@ -77,9 +77,13 @@ void mousePressed() {
       player.stop();
     }
   }
-  if (ply) {
-    curPos = 0;
-    ply = !ply;
+  if (mouseY > height/2) {
+    if (ply) {
+      curPos = 0;
+      ply = !ply;
+    }else {
+      ply = true;
+    }
   }
 }
 
