@@ -31,10 +31,10 @@ void draw() {
   //float imageWidth = (height*anim[curPos].width)/anim[curPos].height;
   if (ply) {
     image(anim[curPos], 0, 0, width, height);
-    
+    curPos += 1;
     if (curPos >= anim.length) {
-      //curPos = 0;
-      curPos += 1;
+      curPos = 0;
+      
     }
   }
 
@@ -44,8 +44,8 @@ void draw() {
 }  // mouseDragged doesn't work without this
 
 void mouseDragged() {
-  player.cue(0);
-  player.play();
+//  player.cue(0);
+//  player.play();
 
   curPos = (int)map(mouseX, 0, width, 0, anim.length-1);
 
