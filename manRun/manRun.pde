@@ -34,10 +34,14 @@ void draw() { // mouseDragged doesn't work without this
       
     }
   }
-
-  float ratio = (float) mouseX / (float) width;
-  ratio *= 2;
-  player.speed(ratio);
+  float ratio = 0;
+  if (mouseY > height/2) {
+    ratio = (float) mouseX / (float) width;
+    ratio *= 2;
+    player.speed(ratio);
+  }
+  fill(ratio * 128);
+  rect(0, 0, width, height/8);
 }  
 
 void mouseDragged() {
