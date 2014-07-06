@@ -44,7 +44,7 @@ void draw() { // mouseDragged doesn't work without this
   }else{
     fill(0, 255, 0);
   }
-  rect(width/4, height/10, width/4, height/10);
+  rect(0 + width/2, 0, width/2, height/8);
   
   if (mouseY > height/2) {
     ratio = (float) mouseX / (float) width;
@@ -52,7 +52,7 @@ void draw() { // mouseDragged doesn't work without this
     player.speed(ratio);
   }
   fill(ratio * 128);
-  rect(0, 0, width, height/8);
+  rect(0, 0, width/2, height/8);
 }  
 
 void mouseDragged() {
@@ -63,11 +63,12 @@ void mouseDragged() {
 
   curPos = constrain(curPos, 0, anim.length-1);
 }
-
-void mousePressed() {
+void mouseClicked() {
   curPos = 0;
   ply = !ply;
-  if (mouseY < height/2) {
+ }
+void mousePressed() {
+  if (mouseY < height/8) {
     button = !button;
     if (button) {
       player.play();
