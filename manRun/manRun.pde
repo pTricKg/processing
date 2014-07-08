@@ -30,14 +30,14 @@ void draw() { // mouseDragged doesn't work without this
   //  image(anim[curImage]);
   //  curImage += 1;
   //float imageWidth = (height*anim[curPos].width)/anim[curPos].height;
-  
+
   if (ply) {
-    
+
     if (curPos >= anim.length) {
       curPos = 0;
-    }else {
+    } else {
       image(anim[(int)curPos], 0, 0, width, height); // need int for this
-    curPos += 1;
+      curPos += 1;
     }
   }
   float ratio = 0;
