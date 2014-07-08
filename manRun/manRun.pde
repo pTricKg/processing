@@ -40,7 +40,7 @@ void draw() { // mouseDragged doesn't work without this
     if (curPos >= anim.length) {
       curPos = 0;
     } else {
-      image(anim[(int)curPos], width/2, height/2, anim[0].width, anim[0].height); // need int for this
+      image(anim[(int)curPos], width/2, height/2, anim[0].width * 50, anim[0].height * 50); // need int for this
       curPos += 1;
     }
   }
@@ -87,7 +87,7 @@ void mousePressed() {
       player.stop();
     }
   }
-  if (dist(mouseX, mouseY, manX, manY) > anim[0].width/2 ) {
+  if (dist(mouseX, mouseY, manX, manY) < anim[0].width) {
       if (ply) {
         curPos = 0;
         ply = !ply;
