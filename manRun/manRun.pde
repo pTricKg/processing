@@ -2,7 +2,7 @@ PImage [] anim;
 boolean ply;
 boolean button;
 float curPos = 0; // need float here instead of int for speed adjustment
-float spdAdjst = 1.0;
+float spdAdjst = 0.3;
 
 Maxim maxim;
 AudioPlayer player;
@@ -54,7 +54,7 @@ void draw() { // mouseDragged doesn't work without this
     ratio *= 2;
     player.speed(ratio);
 
-    curPos = curPos + 1 * spdAdjst;
+    curPos = curPos * spdAdjst;
   }
   fill(ratio * 128);
   rect(0, 0, width/2, height/8);
