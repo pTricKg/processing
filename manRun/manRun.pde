@@ -33,14 +33,14 @@ void draw() { // mouseDragged doesn't work without this
   //  image(anim[curImage]);
   //  curImage += 1;
   //float imageWidth = (height*anim[curPos].width)/anim[curPos].height;
-  manX = anim[0].width/2;
-  manY = anim[0].height/2;
+  manX = anim[0].width;
+  manY = anim[0].height;
   if (ply) {
 
     if (curPos >= anim.length) {
       curPos = 0;
     } else {
-      image(anim[(int)curPos], 0, 0, width, height); // need int for this
+      image(anim[(int)curPos], width/2, height/2, anim[0].width, anim[0].height); // need int for this
       curPos += 1;
     }
   }
@@ -58,7 +58,7 @@ void draw() { // mouseDragged doesn't work without this
     ratio *= 2;
     player.speed(ratio);
 
-    curPos = curPos + 1 * spdAdjst;
+    //curPos = curPos + 1 * spdAdjst;
   }
   fill(ratio * 128);
   rect(0, 0, width/2, height/8);
@@ -87,8 +87,7 @@ void mousePressed() {
       player.stop();
     }
   }
-  if (mouseX < anim[0].width/2) { // > height/2 ) {
-    if (mouseY < anim[0].height/2) {
+  if (dist(mouseX, mouseY, manX, manY) > anim[0].width/2 ) {
       if (ply) {
         curPos = 0;
         ply = !ply;
@@ -97,5 +96,5 @@ void mousePressed() {
       }
     }
   }
-}
+
 
