@@ -2,7 +2,7 @@ PImage [] anim;
 boolean ply;
 boolean button;
 float curPos = 0; // need float here instead of int for speed adjustment
-float spdAdjst = 1.0;
+float spdAdjst = 5.0;
 
 Maxim maxim;
 AudioPlayer player;
