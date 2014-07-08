@@ -1,7 +1,8 @@
 PImage [] anim;
 boolean ply;
 boolean button;
-int curPos = 0;
+float curPos = 0; // need float here instead of int for speed adjustment
+float spdAdjst = 1.0;
 
 Maxim maxim;
 AudioPlayer player;
@@ -29,8 +30,9 @@ void draw() { // mouseDragged doesn't work without this
   //  image(anim[curImage]);
   //  curImage += 1;
   //float imageWidth = (height*anim[curPos].width)/anim[curPos].height;
+  
   if (ply) {
-    image(anim[curPos], 0, 0, width, height);
+    image(anim[(int)curPos], 0, 0, width, height); // need int for this
     curPos += 1;
     if (curPos >= anim.length) {
       curPos = 0;
@@ -40,8 +42,7 @@ void draw() { // mouseDragged doesn't work without this
 
   if (button) {
     fill(255, 0, 0);
-  }
-  else {
+  } else {
     fill(0, 255, 0);
   }
   rect(0 + width/2, 0, width/2, height/8);
@@ -50,6 +51,8 @@ void draw() { // mouseDragged doesn't work without this
     ratio = (float) mouseX / (float) width;
     ratio *= 2;
     player.speed(ratio);
+
+    curPos = curPos + 1 * spdAdjst;
   }
   fill(ratio * 128);
   rect(0, 0, width/2, height/8);
@@ -62,6 +65,8 @@ void mouseDragged() {
   curPos = (int)map(mouseX, 0, width, 0, anim.length-1);
 
   curPos = constrain(curPos, 0, anim.length-1);
+
+  spdAdjst = map(mouseX, 0, width, 0, 2);
 }
 //void mouseClicked() {
 //  curPos = 0;
@@ -72,8 +77,7 @@ void mousePressed() {
     button = !button;
     if (button) {
       player.play();
-    }
-    else {
+    } else {
       player.stop();
     }
   }
@@ -81,7 +85,7 @@ void mousePressed() {
     if (ply) {
       curPos = 0;
       ply = !ply;
-    }else {
+    } else {
       ply = true;
     }
   }
