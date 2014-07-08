@@ -41,7 +41,7 @@ void draw() { // mouseDragged doesn't work without this
     if (curPos >= anim.length) {
       curPos = 0;
     } else {
-      image(anim[(int)curPos], width/2, height/2, anim[0].width * 5, anim[0].height * 5); // need int for this
+      image(anim[(int)curPos], width/2, height/2, anim[0].width * 15, anim[0].height * 15); // need int for this
       curPos += 1;
     }
   }
