@@ -4,7 +4,7 @@ boolean button;
 float curPos = 0; // need float here instead of int for speed adjustment
 float spdAdjst = 5.0;
 
-int manX,manY;
+int manX, manY;
 
 Maxim maxim;
 AudioPlayer player;
@@ -12,9 +12,9 @@ AudioPlayer player;
 /* Running Man Animation */
 
 void setup() {
-  size(640, 920);
+  //size(640, 920);
   //setup animation
-  ply = false;
+  ply = true;
   anim = loadImages("anim/anim", ".jpg", 56);
 
   // set up window
@@ -72,7 +72,7 @@ void mouseDragged() {
 
   curPos = constrain(curPos, 0, anim.length-1);
 
-  spdAdjst = map(mouseX, 0, width, 0, 2);
+  //spdAdjst = map(mouseX, 0, width, 0, 2);
 }
 //void mouseClicked() {
 //  curPos = 0;
@@ -87,12 +87,14 @@ void mousePressed() {
       player.stop();
     }
   }
-  if (dist(mouseX, mouseY, manX, manY) < anim[0].width/2) { // > height/2 ) {
-    if (ply) {
-      curPos = 0;
-      ply = !ply;
-    } else {
-      ply = true;
+  if (mouseX < anim[0].width/2) { // > height/2 ) {
+    if (mouseY < anim[0].height/2) {
+      if (ply) {
+        curPos = 0;
+        ply = !ply;
+      } else {
+        ply = true;
+      }
     }
   }
 }
