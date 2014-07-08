@@ -12,7 +12,7 @@ AudioPlayer player;
 void setup() {
   //setup animation
   ply = true;
-  anim = loadImages("anim/anim", ".jpg", 28);
+  anim = loadImages("anim/anim", ".jpg", 57);
 
   // set up window
   //size(width, height);
