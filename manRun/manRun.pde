@@ -33,6 +33,7 @@ void draw() { // mouseDragged doesn't work without this
   //  image(anim[curImage]);
   //  curImage += 1;
   //float imageWidth = (height*anim[curPos].width)/anim[curPos].height;
+  imageMode(CENTER);
   manX = anim[0].width;
   manY = anim[0].height;
   if (ply) {
@@ -40,7 +41,7 @@ void draw() { // mouseDragged doesn't work without this
     if (curPos >= anim.length) {
       curPos = 0;
     } else {
-      image(anim[(int)curPos], width/2, height/2, anim[0].width * 50, anim[0].height * 50); // need int for this
+      image(anim[(int)curPos], width/2, height/2, anim[0].width * 5, anim[0].height * 5); // need int for this
       curPos += 1;
     }
   }
