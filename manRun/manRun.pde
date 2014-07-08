@@ -88,7 +88,7 @@ void mousePressed() {
       player.stop();
     }
   }
-  if (mouseY > height/2) {
+  if (mouseY > height/2 && mouseX < width/4) {
       if (ply) {
         curPos = 0;
         ply = !ply;
