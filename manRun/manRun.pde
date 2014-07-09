@@ -18,11 +18,10 @@ void setup() {
   anim = loadImages("anim/anim", ".jpg", 56);
 
   // set up window
-  size(680, 920);
   background(0, 0, 0);
 
   // set up sound
-  button = false;
+  button = true;
   maxim = new Maxim(this);
   player = maxim.loadFile("mybeat.wav");
   player.setLooping(true);
