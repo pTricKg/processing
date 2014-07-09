@@ -53,7 +53,7 @@ void draw() { // mouseDragged doesn't work without this
   }
   rect(0 + width/2, 0, width/2, height/8);
 
-  if (mouseY < height/2) {
+  if (mouseY < height/8) {
     ratio = (float) mouseX / (float) width;
     ratio *= 2;
     player.speed(ratio);
