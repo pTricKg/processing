@@ -22,7 +22,7 @@ void setup() {
   background(0, 0, 0);
 
   // set up sound
-  button = false;
+  button = true;
   maxim = new Maxim(this);
   player = maxim.loadFile("mybeat.wav");
   player.setLooping(true);
@@ -31,7 +31,7 @@ void setup() {
 
 void draw() { // mouseDragged doesn't work without this
   
-  //float imageWidth = (height*anim[curPos].width)/anim[curPos].height;
+  //float imageWidth = ((int)height*anim[curPos].width)/anim[curPos].height;
   imageMode(CENTER);
   manX = anim[0].width;
   manY = anim[0].height;
@@ -58,7 +58,7 @@ void draw() { // mouseDragged doesn't work without this
     ratio *= 2;
     player.speed(ratio);
 
-    //curPos = curPos + 1 * spdAdjst;
+    // curPos = curPos + 1 * spdAdjst;
   }
   fill(ratio * 128);
   rect(0, 0, width/2, height/8);
@@ -72,7 +72,7 @@ void mouseDragged() {
 
   curPos = constrain(curPos, 0, anim.length-1);
 
-  //spdAdjst = map(mouseX, 0, width, 0, 2);
+  // spdAdjst = map(mouseX, 0, width, 0, 2);
 }
 //void mouseClicked() {
 //  curPos = 0;
