@@ -12,7 +12,7 @@ AudioPlayer player;
 /* Running Man Animation */
 
 void setup() {
-  //size(640, 920);
+  
   //setup animation
   ply = true;
   anim = loadImages("anim/anim", ".jpg", 56);
@@ -30,8 +30,7 @@ void setup() {
 }
 
 void draw() { // mouseDragged doesn't work without this
-  //  image(anim[curImage]);
-  //  curImage += 1;
+  
   //float imageWidth = (height*anim[curPos].width)/anim[curPos].height;
   imageMode(CENTER);
   manX = anim[0].width;
