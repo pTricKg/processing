@@ -86,6 +86,7 @@ void mousePressed() {
   if (mouseY < height/8) {
     button = !button;
     if (button) {
+      player2.stop();
       player.play();
     } else {
       player.stop();
