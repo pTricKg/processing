@@ -26,11 +26,11 @@ void setup() {
   button = true;
   maxim = new Maxim(this);
   player = maxim.loadFile("mybeat.wav");
-  player2 = maxim.loadFile("thunder.wav");
+  //player2 = maxim.loadFile("thunder.wav");
   player.setLooping(true);
-  player2.setLooping(false);
+  //player2.setLooping(false);
   player.play();
-  player2.play();
+  //player2.play();
 }
 
 void draw() { // mouseDragged doesn't work without this
@@ -86,14 +86,14 @@ void mousePressed() {
   if (mouseY < height/8) {
     button = !button;
     if (button) {
-      player2.stop();
+      //player2.stop();
       player.play();
     } else {
       player.stop();
-      player2.play();
+      //player2.play();
     }
   }
-  if (mouseY > height/2 && mouseX < width/4) {
+  if (mouseY > height/2 && mouseX > width/4 &&  mouseX < (width/2 + 30)) {
       if (ply) {
         curPos = 0;
         ply = !ply;
