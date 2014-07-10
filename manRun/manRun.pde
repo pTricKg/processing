@@ -27,9 +27,10 @@ void setup() {
   maxim = new Maxim(this);
   player = maxim.loadFile("mybeat.wav");
   //player2 = maxim.loadFile("thunder.wav");
+  player.play();
   player.setLooping(true);
   //player2.setLooping(false);
-  player.play();
+  
   //player2.play();
 }
 
