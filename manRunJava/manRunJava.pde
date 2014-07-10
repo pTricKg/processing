@@ -93,7 +93,7 @@ void mousePressed() {
       //player2.play();
     }
   }
-  if (mouseY > height/2 && mouseX > width/4 &&  mouseX < (width/2 + 30)) {
+  if (mouseY > height/2 && mouseX > width/4 &&  mouseX < (width/2 + width/4)) {
       if (ply) {
         curPos = 0;
         ply = !ply;
