@@ -8,6 +8,7 @@ int manX, manY;
 
 Maxim maxim;
 AudioPlayer player;
+AudioPlayer player2;
 
 /* Running Man Animation */
 
@@ -18,19 +19,23 @@ void setup() {
   anim = loadImages("anim/anim", ".jpg", 56);
 
   // set up window
+  size(680, 920);
   background(0, 0, 0);
 
   // set up sound
   button = true;
   maxim = new Maxim(this);
   player = maxim.loadFile("mybeat.wav");
+  //player2 = maxim.loadFile("thunder.wav");
   player.setLooping(true);
+  //player2.setLooping(false);
   player.play();
+  //player2.play();
 }
 
 void draw() { // mouseDragged doesn't work without this
   
-  //float imageWidth = (height*anim[curPos].width)/anim[curPos].height;
+  //float imageWidth = ((int)height*anim[curPos].width)/anim[curPos].height;
   imageMode(CENTER);
   manX = anim[0].width;
   manY = anim[0].height;
@@ -52,12 +57,12 @@ void draw() { // mouseDragged doesn't work without this
   }
   rect(0 + width/2, 0, width/2, height/8);
 
-  if (mouseY < height/2) {
+  if (mouseY < height/8) {
     ratio = (float) mouseX / (float) width;
     ratio *= 2;
     player.speed(ratio);
 
-    //curPos = curPos + 1 * spdAdjst;
+    // curPos = curPos + 1 * spdAdjst;
   }
   fill(ratio * 128);
   rect(0, 0, width/2, height/8);
@@ -66,12 +71,12 @@ void draw() { // mouseDragged doesn't work without this
 void mouseDragged() {
   //  player.cue(0);
   //  player.play();
+  
+    curPos = (int)map(mouseX, 0, width, 0, anim.length-1);
 
-  curPos = (int)map(mouseX, 0, width, 0, anim.length-1);
-
-  curPos = constrain(curPos, 0, anim.length-1);
-
-  //spdAdjst = map(mouseX, 0, width, 0, 2);
+    curPos = constrain(curPos, 0, anim.length-1);
+    
+    // spdAdjst = map(mouseX, 0, width, 0, 2);
 }
 //void mouseClicked() {
 //  curPos = 0;
@@ -81,12 +86,14 @@ void mousePressed() {
   if (mouseY < height/8) {
     button = !button;
     if (button) {
+      //player2.stop();
       player.play();
     } else {
       player.stop();
+      //player2.play();
     }
   }
-  if (mouseY > height/2 && mouseX < width/4) {
+  if (mouseY > height/2 && mouseX > width/4 &&  mouseX < (width/2 + width/4)) {
       if (ply) {
         curPos = 0;
         ply = !ply;
