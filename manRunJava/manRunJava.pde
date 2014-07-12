@@ -19,7 +19,7 @@ void setup() {
   anim = loadImages("anim/anim", ".jpg", 56);
 
   // set up window
-  //size(480, 620);
+  size(520, 840);
   background(0, 0, 0);
 
   // set up sound
