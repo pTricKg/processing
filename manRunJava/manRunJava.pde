@@ -55,7 +55,7 @@ void draw() { // mouseDragged doesn't work without this
   } else {
     fill(0, 255, 0);
   }
-  rect(0 + width/2, 0, width/2, height/8);
+  rect(0 + width/2, 0, width/2, height/10);
 
   if (mouseY < height/8) {
     ratio = (float) mouseX / (float) width;
@@ -65,7 +65,7 @@ void draw() { // mouseDragged doesn't work without this
     // curPos = curPos + 1 * spdAdjst;
   }
   fill(ratio * 128);
-  rect(0, 0, width/2, height/8);
+  rect(0, 0, width/2, height/10);
 }  
 
 void mouseDragged() {
@@ -83,7 +83,7 @@ void mouseDragged() {
 //  ply = !ply;
 //}
 void mousePressed() {
-  if (mouseY < height/8) {
+  if (mouseY < height/10) {
     button = !button;
     if (button) {
       //player2.stop();
