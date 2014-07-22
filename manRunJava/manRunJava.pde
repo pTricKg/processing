@@ -1,3 +1,5 @@
+/* Man running anim with music for Java console */
+
 PImage [] anim;
 boolean ply;
 boolean button;
