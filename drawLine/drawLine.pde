@@ -2,6 +2,7 @@
 Maxim maxim;
 AudioPlayer player;
 
+/* Drawing line */
 void setup() {
 
   size(820, 640);

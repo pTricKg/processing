@@ -1,4 +1,4 @@
-
+/* just some examples */
 
 float red = map(mouseX, 0, width, 0, 255);
 // distance between mouse and screen center
