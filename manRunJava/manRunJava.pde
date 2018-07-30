@@ -65,7 +65,7 @@ void draw() { // mouseDragged doesn't work without this
     ratio *= 2;
     player.speed(ratio);
 
-//    curPos = curPos + 1 * spdAdjst;
+    curPos = curPos + 1 * spdAdjst;
   }
   fill(ratio * 128);
   rect(0, 0, width/2, height/10);
@@ -79,7 +79,7 @@ void mouseDragged() {
 
   curPos = constrain(curPos, 0, anim.length-1);
 
-//  spdAdjst = map(mouseX, 0, width, 0, 2);
+  spdAdjst = map(mouseX, 0, width, 0, 2);
 }
 //void mouseClicked() {
 //  curPos = 0;
